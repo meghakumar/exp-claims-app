@@ -1,0 +1,9 @@
+
+api: 
+  
+  artifactId: "exp-claims-app-v1-dev"
+  version: "1.0.0"
+  majorVersion: "v1"
+  port: "8082"
+  
+ 

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<flow name="get-claims-performancedata" doc:id="099640f1-2fb3-4e39-80ff-ba10bfc3ee44" >
+		<logger level="INFO" doc:name="Before Request logger" doc:id="f6adc693-3f13-4dbe-ac68-cdbc8e502075" message="Before claims request flow"/>
+		<until-successful maxRetries="${retries.attempts}" doc:name="Until Successful" doc:id="61b154de-537c-4876-bd23-6fa505d1f827" millisBetweenRetries="${retries.frequency}">
+			<http:request method="GET" doc:name="Claim Request" doc:id="3aae7252-2841-41db-80d3-2aa13a304c36" config-ref="sysclaims-requestConfig" path="${sysclaims.path}">
+			<http:headers><![CDATA[#[output application/java
+---
+{
+	"orchestration-type" : "Value",
+	"x-correlation-id" : "1234",
+	"clientSecret" : "1234",
+	"Authorization" : "Bearer eyJ0eXAi0iJKd",
+	"clientId" : "1234"
+}]]]></http:headers>
+				<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"policyReferenceNumber" : attributes.queryParams.policyReferenceNumber
+}]]]></http:query-params>
+		</http:request>
+		</until-successful>
+		<error-handler ref="global-error-handler" />
+	</flow>
+</mule>

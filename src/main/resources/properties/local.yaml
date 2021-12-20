@@ -1,0 +1,35 @@
+
+api: 
+  
+  artifactId: "proc-claims-orch-v1-dev"
+  version: "1.0.0"
+  majorVersion: "v1"
+  port: "8081"
+  
+"sysclaims":
+  "host": "proc-claims-orch.us-e2.cloudhub.io"
+  "basepath": "/api"
+  "path": "/claims/performanceData"
+  "getmethod": "GET"
+  "statuspath": "/status"  
+  "port" : "443"
+  "contenttype": "application/json"
+  "Authorization": "1234"
+  "x-correlation-id": "abcdedf09-nkn4546-jn34nkkm-fg669c0002"
+  "clientId": "12234"
+  "clientSecret": "1234"
+  "orchestration-type": "value"
+  
+tls.keystore:
+ type: "pkcs12"
+ alias: "server"
+ path: "certs/exp-claims-cms-dev.p12"
+ 
+jks.keystore:
+ password: "mulesoft"
+ type: "jks"
+ path: "certs/keystore.jks" 
+  
+"autodiscovery":
+  "id": "17512634"
+  

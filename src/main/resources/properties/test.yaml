@@ -1,0 +1,24 @@
+
+api: 
+  
+  artifactId: "sys-claims-app-v1-dev"
+  version: "1.0.0"
+  majorVersion: "v1"
+  port: "8081"
+  
+"autodiscovery":
+  "id": "17512634"
+  
+"sysclaims":
+  "host": "proc-claims-cms.us-e2.cloudhub.io"
+  "basepath": "/api"
+  "path": "/claims/performanceData"
+  "getmethod": "GET"
+  "statuspath": "/status"  
+  "port" : "8082"
+  "contenttype": "application/json"
+  "Authorization": "1234"
+  "x-correlation-id": "abcdedf09-nkn4546-jn34nkkm-fg669c0002"
+  "clientId": "12234"
+  "clientSecret": "1234"
+  "orchestration-type": "value" 

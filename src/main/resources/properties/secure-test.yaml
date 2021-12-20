@@ -1,0 +1,13 @@
+tls.keystore:
+ password: "![TjrgNiKb/sw=]"
+
+#########################################################
+
+
+# api Configurations
+"sysclaims":
+  
+  "x-correlation-id": "abcdedf09-nkn4546-jn34nkkm-fg669c0002"
+  "clientId": "12234"
+  "clientSecret": "1234"
+  "orchestration-type": "value" 
