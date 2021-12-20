@@ -78,22 +78,22 @@ pipeline
 
       }
 	  }
-  stage('Email') {
-      steps {
-        emailext(subject: 'Reports', body: 'Attached the body', attachLog: true, attachmentsPattern: '*/summary.html', from: 'jojisham13@gmail.com', mimeType: 'text/html', to: 'jojisham13@gmail.com')
-      }
-    }
-
-  }
-  
-  
-  // stage('Email') {
-   //   steps {
-   //     emailext(subject: 'Testing Reports for $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', body: 'Please find the test reports. In order to check the logs also, please go to url: $BUILD_URL'+readFile("emailTemplate.html"), attachmentsPattern: '*/target/site/munit/coverage/summary.html', from: "${readProps['email.from']}", mimeType: "${readProps['email.mimeType']}", to: "${readProps['email.to']}")
-   //   }
+//  stage('Email') {
+  //    steps {
+  //      emailext(subject: 'Reports', body: 'Attached the body', attachLog: true, attachmentsPattern: '*/summary.html', from: 'jojisham13@gmail.com', mimeType: 'text/html', to: 'jojisham13@gmail.com')
+  //    }
   //  }
 
  // }
+  
+  
+  stage('Email') {
+     steps {
+       emailext(subject: 'Testing Reports for $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!', body: 'Please find the test reports. In order to check the logs also, please go to url: $BUILD_URL'+readFile("emailTemplate.html"), attachmentsPattern: '**/summary.html', from: "${readProps['email.from']}", mimeType: "${readProps['email.mimeType']}", to: "${readProps['email.to']}")
+     }
+   }
+
+  }
  	
  	
  	
