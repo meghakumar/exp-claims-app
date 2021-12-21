@@ -17,9 +17,9 @@ api:
   "contenttype": "application/json"
   "Authorization": "1234"
   "x-correlation-id": "abcdedf09-nkn4546-jn34nkkm-fg669c0002"
-  "clientId": "12234"
-  "clientSecret": "1234"
-  "orchestration-type": "value"
+  "clientId": "6a840af6ba1f4feeaf0f60cf4c030032"
+  "clientSecret": "BA13B1880249475D81C8D839b4bb0F18"
+  "orchestration-type": "demo"
   
 tls.keystore:
  type: "pkcs12"
